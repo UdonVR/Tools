@@ -1,0 +1,16 @@
+{
+  "name": "com.udonvr.toolkit",
+  "displayName": "UdonVR - Toolkit",
+  "version": "1.0.0-dev",
+  "unity": "2022.3",
+  "description": "Toolkit for VRChat",
+  "author": {
+    "name": "UdonVR",
+    "email": "admin@udonvr.com",
+    "url": "https://udonvr.com"
+  },
+  "vpmDependencies": {
+    "com.vrchat.base": ">=3.5.1",
+    "com.vrchat.worlds": ">=3.5.1"
+  }
+}

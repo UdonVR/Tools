@@ -1,0 +1,22 @@
+{
+    "name": "UdonVR.ToolkitEditor",
+    "rootNamespace": "",
+    "references": [
+        "VRC.SDKBase.Editor.BuildPipeline",
+        "UdonSharp.Runtime",
+        "UdonSharp.Lib",
+        "UdonSharp.Editor",
+        "UdonVR.Toolkit"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
