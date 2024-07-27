@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.udonvr.toolkit": {
+    "com.udonvr.tools": {
       "version": "file:com.udonvr.tools",
       "depth": 0,
       "source": "embedded",
