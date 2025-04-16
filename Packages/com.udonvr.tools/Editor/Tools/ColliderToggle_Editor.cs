@@ -22,12 +22,29 @@ namespace UdonVR.ToolkitEditor
         private static void ProcessScene()
         {
             UdonVR.Toolkit.ColliderToggle[] _scripts = Resources.FindObjectsOfTypeAll<UdonVR.Toolkit.ColliderToggle>();
+            UdonVR.Toolkit.ColliderToggleButton[] _buttons = Resources.FindObjectsOfTypeAll<UdonVR.Toolkit.ColliderToggleButton>();
             if (_scripts == null) return;
             if (_scripts.Length == 0) return;
             for (int i = 0; i < _scripts.Length; i++)
             {
                 _ColliderSetup(_scripts[i]);
             }
+
+            for (int i = 0; i < _buttons.Length; i++)
+            {
+                for (int j = 0; j < _scripts.Length; j++)
+                {
+                    if (_buttons[i]._colliderToggle == _scripts[j])
+                    {
+                        LogHelper_Toolkit.Log($"Found <color=#888888>{_buttons[i].name}</color> binding to controller <color=#888888>{_scripts[j].name}</color>");
+                        Array.Resize(ref _scripts[j].buttons, _scripts[j].buttons.Length + 1);
+                        _scripts[j].buttons[^1] = _buttons[i];
+                        if (_buttons[i].indicatorObject != null) _buttons[i].indicatorObject.SetActive(_scripts[j].isOn);
+                        break;
+                    }
+                }
+            }
+            
         }
 
 
