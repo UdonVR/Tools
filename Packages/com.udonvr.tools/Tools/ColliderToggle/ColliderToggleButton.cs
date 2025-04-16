@@ -12,6 +12,11 @@ namespace UdonVR.Toolkit
         public ColliderToggle _colliderToggle;
         public GameObject indicatorObject;
 
+        public void _Toggle()
+        {
+            _colliderToggle._ToggleColliders();
+        }
+        
         public void _UpdateIndicator()
         {
             if (indicatorObject != null) indicatorObject.SetActive(_colliderToggle.isOn);
