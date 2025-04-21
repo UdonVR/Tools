@@ -109,8 +109,6 @@ namespace UdonVR.ToolkitEditor
         private GameObject[] __tagSingle;
         private GameObject[] __tagParent;
         private Collider[][] _parentColliders;
-        
-        private bool onEnable = false;
         void OnEnable()
         {
             _script = (ColliderToggle)target;
@@ -131,7 +129,6 @@ namespace UdonVR.ToolkitEditor
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.LabelField(onEnable.ToString());
             _tagSingle = serializedObject.FindProperty("tagSingle");
             _tagParent = serializedObject.FindProperty("tagParent");
             _isOn = serializedObject.FindProperty("isOn");
@@ -255,7 +252,7 @@ namespace UdonVR.ToolkitEditor
                                     EditorGUI.BeginDisabledGroup(true);
                                     EditorGUILayout.ObjectField(__tagParent[i], typeof(GameObject), true);
                                     EditorGUI.EndDisabledGroup();
-                                    EditorGUILayout.LabelField($"{_parentColliders[i].Length}", GUILayout.MinWidth(0f), GUILayout.MaxWidth(100f));
+                                    EditorGUILayout.LabelField($"{_parentColliders[i].Length}", GUILayout.MinWidth(0f), GUILayout.MaxWidth(50f));
                                     if (GUILayout.Button(_parentDrawers[i] ? "Close" : "Open", GUILayout.Width(100f)))
                                     {
                                         _parentDrawers[i] = !_parentDrawers[i];
