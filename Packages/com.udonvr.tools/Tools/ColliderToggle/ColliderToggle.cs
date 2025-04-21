@@ -15,7 +15,17 @@ namespace UdonVR.Toolkit
         public String tagSingle = "ColliderToggle - Single";
         public String tagParent = "ColliderToggle - Parent";
 
+        public bool defaultState_Vr = false;
+        public bool defaultState_Pc = true;
+
         public bool isOn = false;
+
+        private void Start()
+        {
+            if (Networking.LocalPlayer.IsUserInVR()) return;
+            isOn = defaultState_Pc;
+            UpdateColliders();
+        }
 
         public void _ToggleColliders()
         {
